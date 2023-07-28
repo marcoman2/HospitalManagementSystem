@@ -1,0 +1,95 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 05 23, 23, 6:11:15 PM
+    Author     : WINDOWS 10
+*/
+
+.white-bg{
+    -fx-background-color: #fff;
+}
+
+.border-top{
+    -fx-border-color: #000;
+    -fx-border-width: .5px 0 .4px 0;
+}
+
+.header-1{
+    -fx-border-color: linear-gradient(to bottom right, #188ba7, #306090);
+    -fx-border-width: 0 0 0 2px;
+    -fx-padding: 0 0 0 5px;
+}
+
+.header-2{
+    -fx-border-color: linear-gradient(to bottom right, #a413a1, #64308e);
+    -fx-border-width: 0 0 0 2px;
+    -fx-padding: 0 0 0 5px;
+}
+
+.radius{
+    -fx-background-radius: 5px;
+}
+
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+}
+
+.bg-color-1{
+    -fx-background-color: linear-gradient(to bottom right, #188ba7, #306090);
+}
+
+.bg-color-2{
+    -fx-background-color: linear-gradient(to bottom right, #a413a1, #64308e);
+}
+
+.nav-btn-1{
+    -fx-background-color: transparent;
+    -fx-border-color: #fff;
+    -fx-border-width: .5px;
+    -fx-text-fill: #fff;
+    -fx-font-family: Arial;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER_LEFT;
+}
+.nav-btn-1:hover{
+    -fx-background-color: #fff;
+    -fx-text-fill: #000;
+}
+
+.nav-btn-2{
+    -fx-background-color: transparent;
+    -fx-border-color: #fff;
+    -fx-border-width: .5px;
+    -fx-text-fill: #fff;
+    -fx-font-family: Arial;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER_LEFT;
+}
+.nav-btn-2:hover{
+    -fx-background-color: #fff;
+    -fx-text-fill: #000;
+}
+
+.table-view{
+    -fx-padding: 0;
+    -fx-border-radius: 8px;
+    -fx-border-color: linear-gradient(to bottom right, #188ba7, #306090);
+}
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(to bottom right, #188ba7, #306090);
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-radius: 8px 8px 0 0 ;
+}
+.table-view .column-header, .filter{
+    -fx-size: 40px;
+    -fx-background-color: transparent;
+}
+.table-view .column-header .label{
+    -fx-font-family: Arial;
+    -fx-text-fill: #fff;
+}

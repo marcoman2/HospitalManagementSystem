@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hospitalmanagementsystem.DoctorMainFormController">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="144.0" layoutY="64.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="40.0" prefWidth="1100.0" stylesheets="@../design/MainFormDesign.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="-58.0" layoutY="-86.0" prefHeight="40.0" prefWidth="214.0" styleClass="bg-color-2" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label layoutX="21.0" layoutY="11.0" text="Hospital Management System" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Circle fx:id="top_profile" fill="DODGERBLUE" layoutX="1012.0" layoutY="22.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" AnchorPane.rightAnchor="75.0" />
+                        <Label layoutX="1036.0" layoutY="13.0" text="Active" AnchorPane.rightAnchor="31.0" />
+                        <Circle fill="#24c756" layoutX="1081.0" layoutY="22.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" AnchorPane.rightAnchor="14.0" />
+                        <Label layoutX="683.0" layoutY="12.0" text="Welcome," AnchorPane.rightAnchor="364.0" />
+                        <Label fx:id="top_username" layoutX="743.0" layoutY="11.0" prefHeight="17.0" prefWidth="138.0" text="MarcoMan" AnchorPane.rightAnchor="219.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="date_time" alignment="CENTER_RIGHT" layoutX="466.0" layoutY="12.0" prefHeight="17.0" prefWidth="187.0" text="MM:DD:YYYY" AnchorPane.rightAnchor="447.0" />
+                        <Label fx:id="current_form" layoutX="233.0" layoutY="11.0" prefHeight="17.0" prefWidth="325.0" styleClass="header-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Dashboard Form" AnchorPane.leftAnchor="233.0" AnchorPane.topAnchor="11.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="logout_btn" layoutX="897.0" layoutY="8.0" mnemonicParsing="false" onAction="#logoutBtn" prefHeight="25.0" prefWidth="79.0" styleClass="btn-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Logout" AnchorPane.rightAnchor="124.0" AnchorPane.topAnchor="8.0" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="border-top" />
+                     </styleClass>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="560.0" prefWidth="214.0" styleClass="bg-color-2" stylesheets="@../design/DoctorMainFormDesign.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="83.0" layoutY="65.0" size="5em" />
+                        <Label layoutX="23.0" layoutY="85.0" text="Doctor ID:" textFill="WHITE" />
+                        <Label fx:id="nav_adminID" layoutX="83.0" layoutY="84.0" prefHeight="17.0" prefWidth="117.0" text="1" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="21.0" layoutY="110.0" text="Full Name:" textFill="WHITE" />
+                        <Label fx:id="nav_username" layoutX="83.0" layoutY="109.0" prefHeight="17.0" prefWidth="117.0" text="marcoman" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Line endX="88.0" layoutX="113.0" layoutY="152.0" startX="-100.0" stroke="WHITE" />
+                        <FontAwesomeIcon fill="#d738c7" glyphName="HOSPITAL_ALT" layoutX="60.0" layoutY="522.0" size="10em" AnchorPane.bottomAnchor="20.857139587402344" AnchorPane.leftAnchor="60.0" />
+                        <Label layoutX="13.0" layoutY="162.0" text="Feature" textFill="WHITE" />
+                        <Button fx:id="dashboard_btn" layoutX="7.0" layoutY="187.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="200.0" styleClass="nav-btn-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Dashboard">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="DASHBOARD" size="1.5em" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="patients_btn" layoutX="7.0" layoutY="240.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="200.0" styleClass="nav-btn-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Patients">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="USERS" size="1.5em" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="appointments_btn" layoutX="7.0" layoutY="292.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="200.0" styleClass="nav-btn-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Appointments">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="CLIPBOARD" size="1.5em" />
+                           </graphic>
+                        </Button>
+                        <Label layoutX="13.0" layoutY="342.0" text="Profile" textFill="WHITE" />
+                        <Button fx:id="profile_btn" layoutX="7.0" layoutY="367.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="200.0" styleClass="nav-btn-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Profile Setting">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="COGS" size="1.5em" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="dashboard_form" layoutX="161.0" layoutY="112.0" prefHeight="560.0" prefWidth="886.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="13.0" layoutY="14.0" prefHeight="156.0" prefWidth="860.0" stylesheets="@../design/MainFormDesign.css" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="14.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <ScrollPane layoutX="23.0" prefHeight="200.0" prefWidth="860.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <AnchorPane prefHeight="153.0" prefWidth="1050.0">
+                                             <children>
+                                                <AnchorPane layoutX="31.0" layoutY="20.0" prefHeight="114.0" prefWidth="240.0" stylesheets="@../design/DoctorMainFormDesign.css">
+                                                   <styleClass>
+                                                      <String fx:value="bg-color-2" />
+                                                      <String fx:value="radius" />
+                                                   </styleClass>
+                                                   <children>
+                                                      <FontAwesomeIcon fill="WHITE" glyphName="USERS" layoutX="14.0" layoutY="78.0" size="5em" />
+                                                      <Label fx:id="dashboard_IP" alignment="CENTER_RIGHT" layoutX="92.0" layoutY="17.0" prefHeight="17.0" prefWidth="134.0" text="0" textFill="WHITE">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER" layoutX="75.0" layoutY="77.0" prefHeight="17.0" prefWidth="134.0" text="Inactive Patients" textFill="WHITE">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="307.0" layoutY="20.0" prefHeight="114.0" prefWidth="240.0" stylesheets="@../design/DoctorMainFormDesign.css">
+                                                   <styleClass>
+                                                      <String fx:value="bg-color-2" />
+                                                      <String fx:value="radius" />
+                                                   </styleClass>
+                                                   <children>
+                                                      <FontAwesomeIcon fill="WHITE" glyphName="USERS" layoutX="14.0" layoutY="78.0" size="5em" />
+                                                      <Label fx:id="dashboard_TP" alignment="CENTER_RIGHT" layoutX="92.0" layoutY="17.0" prefHeight="17.0" prefWidth="134.0" text="0" textFill="WHITE">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER" layoutX="75.0" layoutY="77.0" prefHeight="17.0" prefWidth="134.0" text="Total Patients" textFill="WHITE">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="576.0" layoutY="20.0" prefHeight="114.0" prefWidth="240.0" stylesheets="@../design/DoctorMainFormDesign.css">
+                                                   <styleClass>
+                                                      <String fx:value="bg-color-2" />
+                                                      <String fx:value="radius" />
+                                                   </styleClass>
+                                                   <children>
+                                                      <FontAwesomeIcon fill="WHITE" glyphName="USERS" layoutX="14.0" layoutY="78.0" size="5em" />
+                                                      <Label fx:id="dashboard_AP" alignment="CENTER_RIGHT" layoutX="92.0" layoutY="17.0" prefHeight="17.0" prefWidth="134.0" text="0" textFill="WHITE">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER" layoutX="75.0" layoutY="77.0" prefHeight="17.0" prefWidth="134.0" text="Active Patients" textFill="WHITE">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="846.0" layoutY="20.0" prefHeight="114.0" prefWidth="240.0" stylesheets="@../design/DoctorMainFormDesign.css">
+                                                   <styleClass>
+                                                      <String fx:value="bg-color-2" />
+                                                      <String fx:value="radius" />
+                                                   </styleClass>
+                                                   <children>
+                                                      <FontAwesomeIcon fill="WHITE" glyphName="USERS" layoutX="14.0" layoutY="78.0" size="5em" />
+                                                      <Label fx:id="dashboard_tA" alignment="CENTER_RIGHT" layoutX="92.0" layoutY="17.0" prefHeight="17.0" prefWidth="134.0" text="0" textFill="WHITE">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER" layoutX="75.0" layoutY="77.0" prefHeight="17.0" prefWidth="134.0" text="Total Appointments" textFill="WHITE">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="13.0" layoutY="192.0" prefHeight="354.0" prefWidth="860.0" stylesheets="@../design/MainFormDesign.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="192.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="463.0" layoutY="14.0" prefHeight="163.0" prefWidth="383.0" stylesheets="@../design/MainFormDesign.css" AnchorPane.bottomAnchor="177.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <children>
+                                          <AreaChart fx:id="dashboad_chart_PD" layoutX="-98.0" layoutY="-1.0" prefHeight="163.0" prefWidth="383.0" title="Number of Patients" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <xAxis>
+                                                <CategoryAxis side="BOTTOM" />
+                                             </xAxis>
+                                             <yAxis>
+                                                <NumberAxis side="LEFT" />
+                                             </yAxis>
+                                          </AreaChart>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="463.0" layoutY="211.0" prefHeight="129.0" prefWidth="383.0" stylesheets="@../design/MainFormDesign.css" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <children>
+                                          <BarChart fx:id="dashboad_chart_DD" layoutX="-49.0" layoutY="-129.0" prefHeight="271.0" prefWidth="451.0" title="Number of Appointments" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <xAxis>
+                                                <CategoryAxis side="BOTTOM" />
+                                             </xAxis>
+                                             <yAxis>
+                                                <NumberAxis side="LEFT" />
+                                             </yAxis>
+                                          </BarChart>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="14.0" layoutY="13.0" prefHeight="328.0" prefWidth="433.0" stylesheets="@../design/MainFormDesign.css" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="413.0" AnchorPane.topAnchor="13.0">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <children>
+                                          <TableView fx:id="dashboad_tableView" layoutX="13.0" layoutY="41.0" prefHeight="273.0" prefWidth="407.0" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="41.0">
+                                             <columns>
+                                                <TableColumn fx:id="dashboad_col_appointmentID" prefWidth="101.0" text="Appointment ID" />
+                                                <TableColumn fx:id="dashboad_col_name" prefWidth="68.0" text="Name" />
+                                                <TableColumn fx:id="dashboad_col_description" prefWidth="71.0" text="Description" />
+                                                <TableColumn fx:id="dashboad_col_appointmentDate" prefWidth="83.0" text="App Date" />
+                                                <TableColumn fx:id="dashboad_col_status" prefWidth="83.0" text="Status" />
+                                             </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </TableView>
+                                          <Label layoutX="13.0" layoutY="14.0" styleClass="header-1" stylesheets="@../design/MainFormDesign.css" text="Appointment">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="patients_form" layoutX="1.0" prefHeight="560.0" prefWidth="886.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="13.0" prefHeight="534.0" prefWidth="510.0" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="362.0" AnchorPane.topAnchor="13.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" styleClass="header-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Patient Information">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="25.0" layoutY="56.0" text="Patient ID:" />
+                                    <TextField fx:id="patients_patientID" layoutX="25.0" layoutY="73.0" prefHeight="25.0" prefWidth="439.0" promptText="Ex. 202300001" styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="73.0" />
+                                    <Label layoutX="25.0" layoutY="112.0" text="Patient's Name:" />
+                                    <TextField fx:id="patients_patientName" layoutX="25.0" layoutY="129.0" prefHeight="25.0" prefWidth="439.0" promptText="ex. Marco Man" styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="129.0" />
+                                    <Label layoutX="26.0" layoutY="168.0" text="Gender:" />
+                                    <ComboBox fx:id="patients_gender" layoutX="26.0" layoutY="185.0" prefHeight="25.0" prefWidth="355.0" promptText="Select your Gender" styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="129.0" AnchorPane.topAnchor="185.0" />
+                                    <Label layoutX="25.0" layoutY="225.0" text="Mobile Number:" />
+                                    <TextField fx:id="patients_mobileNumber" layoutX="25.0" layoutY="242.0" prefHeight="25.0" prefWidth="357.0" promptText="ex. 951234512341" styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="128.0" AnchorPane.topAnchor="242.0" />
+                                    <Label layoutX="25.0" layoutY="284.0" text="Password:" />
+                                    <TextField fx:id="patients_password" layoutX="25.0" layoutY="301.0" prefHeight="25.0" prefWidth="439.0" promptText="at least 8 characters needed" styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="301.0" />
+                                    <Label layoutX="25.0" layoutY="340.0" text="Address:" />
+                                    <TextArea fx:id="patients_address" layoutX="25.0" layoutY="357.0" prefHeight="89.0" prefWidth="439.0" styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.bottomAnchor="88.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="357.0" />
+                                    <Button fx:id="patients_confirmBtn" layoutX="98.0" layoutY="480.0" mnemonicParsing="false" onAction="#patientConfirmBtn" prefHeight="40.0" prefWidth="293.0" styleClass="btn-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Confirm" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="98.0" AnchorPane.rightAnchor="119.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="539.0" layoutY="14.0" prefHeight="203.0" prefWidth="333.0" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" styleClass="header-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Patient Account">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="39.0" layoutY="73.0" text="Patient ID:" />
+                                    <Label fx:id="patients_PA_patientID" layoutX="102.0" layoutY="73.0" prefHeight="17.0" prefWidth="98.0" />
+                                    <Label layoutX="39.0" layoutY="102.0" text="Password:" />
+                                    <Label fx:id="patients_PA_password" layoutX="102.0" layoutY="102.0" prefHeight="17.0" prefWidth="98.0" />
+                                    <Label layoutX="21.0" layoutY="138.0" text="Date Created:" />
+                                    <Label fx:id="patients_PA_dateCreated" layoutX="102.0" layoutY="138.0" prefHeight="17.0" prefWidth="98.0" />
+                                    <FontAwesomeIcon fill="#d738c7" glyphName="USER" layoutX="224.0" layoutY="144.0" opacity="0.31" size="10em" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="539.0" layoutY="234.0" prefHeight="312.0" prefWidth="333.0" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="234.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" styleClass="header-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Patient Information">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="37.0" layoutY="64.0" text="Patient Name:" />
+                                    <Label fx:id="patients_PI_patientName" layoutX="117.0" layoutY="64.0" prefHeight="17.0" prefWidth="98.0" />
+                                    <Label layoutX="70.0" layoutY="93.0" text="Gender:" />
+                                    <Label fx:id="patients_PI_gender" layoutX="117.0" layoutY="93.0" prefHeight="17.0" prefWidth="98.0" />
+                                    <Label layoutX="27.0" layoutY="126.0" text="Mobile Number:" />
+                                    <Label fx:id="patients_PI_mobileNumber" layoutX="117.0" layoutY="126.0" prefHeight="17.0" prefWidth="98.0" />
+                                    <Label layoutX="68.0" layoutY="155.0" text="Address:" />
+                                    <Label fx:id="patients_PI_address" layoutX="117.0" layoutY="155.0" prefHeight="17.0" prefWidth="98.0" />
+                                    <FontAwesomeIcon fill="#d738c7" glyphName="CLIPBOARD" layoutX="199.0" layoutY="275.0" opacity="0.3" size="10em" strokeWidth="0.0" AnchorPane.bottomAnchor="19.857139587402344" AnchorPane.rightAnchor="14.0" />
+                                    <Button fx:id="patients_PI_addBtn" layoutX="44.0" layoutY="262.0" mnemonicParsing="false" onAction="#patientAddBtn" prefHeight="36.0" prefWidth="97.0" styleClass="btn-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Add" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="44.0">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="WHITE" glyphName="PLUS" />
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="patients_PI_recordBtn" layoutX="193.0" layoutY="262.0" mnemonicParsing="false" onAction="#patientRecordBtn" prefHeight="36.0" prefWidth="97.0" styleClass="btn-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Record" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="43.0">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="WHITE" glyphName="CLIPBOARD" />
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="appointments_form" layoutX="5.0" layoutY="5.0" prefHeight="560.0" prefWidth="886.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="9.0" layoutY="14.0" prefHeight="295.0" prefWidth="868.0" stylesheets="@../design/MainFormDesign.css" AnchorPane.bottomAnchor="251.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="14.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" styleClass="header-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Appointments">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView fx:id="appointments_tableView" layoutX="13.0" layoutY="56.0" onMouseClicked="#appointmentSelect" prefHeight="225.0" prefWidth="843.0" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="56.0">
+                                       <columns>
+                                          <TableColumn fx:id="appointments_col_appointmentID" prefWidth="65.0" text="Appointment ID" />
+                                          <TableColumn fx:id="appointments_col_name" prefWidth="110.0" text="Name" />
+                                          <TableColumn fx:id="appointments_col_gender" prefWidth="70.0" text="Gender" />
+                                          <TableColumn fx:id="appointments_col_contactNumber" prefWidth="85.0" text="Contact" />
+                                          <TableColumn fx:id="appointments_col_description" prefWidth="109.0" text="Description" />
+                                          <TableColumn fx:id="appointments_col_date" prefWidth="73.0" text="Date" />
+                                          <TableColumn fx:id="appointments_col_dateModify" prefWidth="92.0" text="Date Modify" />
+                                          <TableColumn fx:id="appointments_col_dateDelete" prefWidth="76.0" text="Date Delete" />
+                                          <TableColumn fx:id="appointments_col_status" prefWidth="81.0" text="Status" />
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="9.0" layoutY="325.0" prefHeight="221.0" prefWidth="868.0" stylesheets="@../design/MainFormDesign.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="30.0" layoutY="18.0" text="Appointment ID:" />
+                                    <TextField fx:id="appointment_appointmentID" layoutX="125.0" layoutY="14.0" styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" />
+                                    <Label layoutX="83.0" layoutY="55.0" text="Name:" />
+                                    <TextField fx:id="appointment_name" layoutX="125.0" layoutY="51.0" prefHeight="25.0" prefWidth="180.0" styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" />
+                                    <Label layoutX="74.0" layoutY="89.0" text="Gender:" />
+                                    <ComboBox fx:id="appointment_gender" layoutX="126.0" layoutY="86.0" prefHeight="25.0" prefWidth="180.0" promptText="Choose..." styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" />
+                                    <Label layoutX="341.0" layoutY="19.0" text="Description:" />
+                                    <TextField fx:id="appointment_description" layoutX="409.0" layoutY="15.0" prefHeight="25.0" prefWidth="180.0" styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" />
+                                    <Label layoutX="345.0" layoutY="56.0" text="Diagnosis:" />
+                                    <TextField fx:id="appointment_diagnosis" layoutX="409.0" layoutY="52.0" prefHeight="25.0" prefWidth="180.0" styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" />
+                                    <Label layoutX="345.0" layoutY="91.0" text="Treatment:" />
+                                    <TextField fx:id="appointment_treatment" layoutX="409.0" layoutY="87.0" prefHeight="25.0" prefWidth="180.0" styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" />
+                                    <Label layoutX="74.0" layoutY="125.0" text="Mobile #:" />
+                                    <TextField fx:id="appointment_mobileNumber" layoutX="128.0" layoutY="121.0" prefHeight="25.0" prefWidth="166.0" styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" />
+                                    <Label layoutX="622.0" layoutY="25.0" text="Address:" />
+                                    <TextArea fx:id="appointment_address" layoutX="674.0" layoutY="25.0" prefHeight="40.0" prefWidth="167.0" styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" />
+                                    <Label layoutX="627.0" layoutY="84.0" text="Status:" />
+                                    <ComboBox fx:id="appointment_status" layoutX="674.0" layoutY="80.0" prefHeight="25.0" prefWidth="168.0" promptText="Choose..." styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" />
+                                    <Button fx:id="appointment_insertBtn" layoutX="167.0" layoutY="171.0" mnemonicParsing="false" onAction="#appointmentInsertBtn" prefHeight="36.0" prefWidth="100.0" styleClass="btn-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Insert" />
+                                    <Button fx:id="appointment_updateBtn" layoutX="286.0" layoutY="171.0" mnemonicParsing="false" onAction="#appointmentUpdateBtn" prefHeight="36.0" prefWidth="100.0" styleClass="btn-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Update" />
+                                    <Button fx:id="appointment_clearBtn" layoutX="430.0" layoutY="171.0" mnemonicParsing="false" onAction="#appointmentClearBtn" prefHeight="36.0" prefWidth="100.0" styleClass="btn-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Clear" />
+                                    <Button fx:id="appointment_deleteBtn" layoutX="549.0" layoutY="171.0" mnemonicParsing="false" onAction="#appointmentDeleteBtn" prefHeight="36.0" prefWidth="100.0" styleClass="btn-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Delete" />
+                                    <DatePicker fx:id="appointment_schedule" layoutX="671.0" layoutY="121.0" />
+                                    <Label layoutX="612.0" layoutY="125.0" text="Schedule:" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="profile_form" layoutX="114.0" layoutY="102.0" prefHeight="560.0" prefWidth="886.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="15.0" prefHeight="531.0" prefWidth="256.0" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="15.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <children>
+                                    <Circle fx:id="profile_circleImage" fill="#2b2f32" layoutX="128.0" layoutY="103.0" radius="89.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <Button fx:id="profile_importBtn" layoutX="49.0" layoutY="205.0" mnemonicParsing="false" onAction="#profileChangeProfile" prefHeight="35.0" prefWidth="158.0" styleClass="btn-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Import" />
+                                    <Label layoutX="49.0" layoutY="274.0" text="Doctor ID:" />
+                                    <Label fx:id="profile_label_doctorID" layoutX="110.0" layoutY="274.0" prefHeight="17.0" prefWidth="132.0" text="DID-1" />
+                                    <Label layoutX="68.0" layoutY="308.0" text="Name:" />
+                                    <Label fx:id="profile_label_name" layoutX="110.0" layoutY="308.0" prefHeight="17.0" prefWidth="132.0" text="DID-1" />
+                                    <Label layoutX="26.0" layoutY="337.0" text="Email Address:" />
+                                    <Label fx:id="profile_label_email" layoutX="110.0" layoutY="337.0" prefHeight="17.0" prefWidth="132.0" text="DID-1" />
+                                    <Label layoutX="28.0" layoutY="371.0" text="Date Created:" />
+                                    <Label fx:id="profile_label_dateCreated" layoutX="110.0" layoutY="371.0" prefHeight="17.0" prefWidth="132.0" text="DID-1" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="288.0" layoutY="15.0" prefHeight="531.0" prefWidth="584.0" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="288.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="15.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <children>
+                                    <FontAwesomeIcon fill="#c512c5" glyphName="COGS" layoutX="312.0" layoutY="478.0" opacity="0.33" size="20em" AnchorPane.bottomAnchor="18.714279174804688" AnchorPane.rightAnchor="14.857147216796875" />
+                                    <Label layoutX="14.0" layoutY="14.0" styleClass="header-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Edit Profile">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <FontAwesomeIcon glyphName="EDIT" layoutX="124.0" layoutY="37.0" size="2em" />
+                                    <Label layoutX="123.0" layoutY="68.0" text="Doctor ID:">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="profile_doctorID" layoutX="198.0" layoutY="66.0" prefHeight="25.0" prefWidth="215.0" styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="171.0" AnchorPane.topAnchor="66.0" />
+                                    <Label layoutX="148.0" layoutY="105.0" text="Name:">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="profile_name" layoutX="198.0" layoutY="103.0" prefHeight="25.0" prefWidth="306.0" styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="103.0" />
+                                    <Label layoutX="87.0" layoutY="142.0" text="Email Address:">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="profile_email" layoutX="198.0" layoutY="140.0" prefHeight="25.0" prefWidth="306.0" styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="140.0" />
+                                    <Label layoutX="131.0" layoutY="179.0" text="Gender:">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="profile_gender" layoutX="198.0" layoutY="177.0" prefHeight="25.0" prefWidth="217.0" promptText="Choose..." styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="169.0" AnchorPane.topAnchor="177.0" />
+                                    <Label layoutX="81.0" layoutY="222.0" text="Mobile Number:">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="profile_mobileNumber" layoutX="198.0" layoutY="220.0" prefHeight="25.0" prefWidth="306.0" styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="220.0" />
+                                    <Label layoutX="129.0" layoutY="265.0" text="Address:">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextArea fx:id="profile_address" layoutX="198.0" layoutY="265.0" prefHeight="91.0" prefWidth="306.0" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="265.0" />
+                                    <Label layoutX="89.0" layoutY="370.0" text="Specialization:">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="profile_specialized" layoutX="198.0" layoutY="368.0" prefHeight="25.0" prefWidth="217.0" promptText="Choose..." styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="169.0" AnchorPane.topAnchor="368.0" />
+                                    <Label layoutX="136.0" layoutY="411.0" text="Status:">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="profile_status" layoutX="198.0" layoutY="409.0" prefHeight="25.0" prefWidth="217.0" promptText="Choose..." styleClass="textfield-2" stylesheets="@../design/DoctorMainFormDesign.css" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="169.0" AnchorPane.topAnchor="409.0" />
+                                    <Button fx:id="profile_updateBtn" layoutX="210.0" layoutY="477.0" mnemonicParsing="false" onAction="#profileUpdateBtn" prefHeight="40.0" prefWidth="164.0" styleClass="btn-2" stylesheets="@../design/DoctorMainFormDesign.css" text="Update" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="210.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
